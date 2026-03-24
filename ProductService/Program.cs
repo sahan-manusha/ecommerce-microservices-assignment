@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen(c =>
         Title = "Product Service API",
         Version = "v1",
         Description = "Microservice for managing products in the E-Commerce platform. Handles product catalog operations including creation, retrieval, update, and deletion of products.",
-        Contact = new OpenApiContact { Name = "Member 1" }
+        Contact = new OpenApiContact { Name = "Member 3" }
     });
 });
 

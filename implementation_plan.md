@@ -12,9 +12,9 @@ Design and implement a **microservice architecture** for an **E-Commerce Platfor
 
 | Microservice | Port | Owner |
 |---|---|---|
-| Product Service | 5001 | Member 1 |
+| Product Service | 5001 | Member 3 |
 | Order Service | 5002 | Member 2 |
-| Customer Service | 5003 | Member 3 |
+| Customer Service | 5003 | Member 1 |
 | Inventory Service | 5004 | Member 4 |
 | API Gateway | 5000 | Shared |
 
@@ -36,7 +36,7 @@ f:\MTIT Assignment 2\
 
 ---
 
-### Product Service (Member 1)
+### Product Service (Member 3)
 
 #### [NEW] ProductService project
 
@@ -58,7 +58,7 @@ f:\MTIT Assignment 2\
 
 ---
 
-### Customer Service (Member 3)
+### Customer Service (Member 1)
 
 #### [NEW] CustomerService project
 

@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen(c =>
         Title = "Customer Service API",
         Version = "v1",
         Description = "Microservice for managing customers in the E-Commerce platform. Handles customer registration, profile management, and contact information.",
-        Contact = new OpenApiContact { Name = "Member 3" }
+        Contact = new OpenApiContact { Name = "Member 1" }
     });
 });
 
