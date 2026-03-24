@@ -17,7 +17,7 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 // Configure port
-builder.WebHost.UseUrls("http://localhost:5001");
+builder.WebHost.UseUrls("http://localhost:5003");
 
 var app = builder.Build();
 
@@ -32,7 +32,7 @@ app.UseSwaggerUI(c =>
 app.UseAuthorization();
 app.MapControllers();
 
-Console.WriteLine("Product Service is running on http://localhost:5001");
-Console.WriteLine("Swagger UI: http://localhost:5001/swagger");
+Console.WriteLine("Product Service is running on http://localhost:5003");
+Console.WriteLine("Swagger UI: http://localhost:5003/swagger");
 
 app.Run();

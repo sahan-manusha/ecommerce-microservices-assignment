@@ -12,9 +12,9 @@ Design and implement a **microservice architecture** for an **E-Commerce Platfor
 
 | Microservice | Port | Owner |
 |---|---|---|
-| Product Service | 5001 | Member 3 |
+| Customer Service | 5001 | Member 1 |
 | Order Service | 5002 | Member 2 |
-| Customer Service | 5003 | Member 1 |
+| Product Service | 5003 | Member 3 |
 | Inventory Service | 5004 | Member 4 |
 | API Gateway | 5000 | Shared |
 
@@ -36,14 +36,14 @@ f:\MTIT Assignment 2\
 
 ---
 
-### Product Service (Member 3)
+### Customer Service (Member 1)
 
-#### [NEW] ProductService project
+#### [NEW] CustomerService project
 
-- **Models:** `Product` (Id, Name, Description, Price, Category)
-- **Endpoints:** Full CRUD — `GET /api/products`, `GET /api/products/{id}`, `POST`, `PUT`, `DELETE`
+- **Models:** `Customer` (Id, FirstName, LastName, Email, Phone, Address)
+- **Endpoints:** Full CRUD — `GET /api/customers`, `GET /api/customers/{id}`, `POST`, `PUT`, `DELETE`
 - **Swagger UI:** Available at `http://localhost:5001/swagger`
-- **Storage:** In-memory list (no database needed)
+- **Storage:** In-memory list
 
 ---
 
@@ -58,14 +58,14 @@ f:\MTIT Assignment 2\
 
 ---
 
-### Customer Service (Member 1)
+### Product Service (Member 3)
 
-#### [NEW] CustomerService project
+#### [NEW] ProductService project
 
-- **Models:** `Customer` (Id, FirstName, LastName, Email, Phone, Address)
-- **Endpoints:** Full CRUD — `GET /api/customers`, `GET /api/customers/{id}`, `POST`, `PUT`, `DELETE`
+- **Models:** `Product` (Id, Name, Description, Price, Category)
+- **Endpoints:** Full CRUD — `GET /api/products`, `GET /api/products/{id}`, `POST`, `PUT`, `DELETE`
 - **Swagger UI:** Available at `http://localhost:5003/swagger`
-- **Storage:** In-memory list
+- **Storage:** In-memory list (no database needed)
 
 ---
 
@@ -85,7 +85,7 @@ f:\MTIT Assignment 2\
 #### [NEW] ApiGateway project (using Ocelot)
 
 - Routes all requests from port `5000` to the appropriate microservice
-- Route pattern: `http://localhost:5000/api/products/*` → `http://localhost:5001/api/products/*`
+- Route pattern: `http://localhost:5000/api/products/*` → `http://localhost:5003/api/products/*`
 - Swagger aggregation: Links to each service's Swagger UI from gateway
 
 ---
@@ -98,13 +98,13 @@ Each service will be tested by running it and hitting its endpoints:
 
 ```bash
 # Start all services, then test:
-curl http://localhost:5001/swagger        # Product Service Swagger
+curl http://localhost:5001/swagger        # Customer Service Swagger
 curl http://localhost:5002/swagger        # Order Service Swagger
-curl http://localhost:5003/swagger        # Customer Service Swagger
+curl http://localhost:5003/swagger        # Product Service Swagger
 curl http://localhost:5004/swagger        # Inventory Service Swagger
-curl http://localhost:5000/api/products   # Via Gateway
-curl http://localhost:5000/api/orders     # Via Gateway
 curl http://localhost:5000/api/customers  # Via Gateway
+curl http://localhost:5000/api/orders     # Via Gateway
+curl http://localhost:5000/api/products   # Via Gateway
 curl http://localhost:5000/api/inventory  # Via Gateway
 ```
 

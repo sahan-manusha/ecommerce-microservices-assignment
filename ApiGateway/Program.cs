@@ -16,7 +16,7 @@ builder.Services.AddSwaggerGen(c =>
     {
         Title = "E-Commerce API Gateway",
         Version = "v1",
-        Description = "Central API Gateway for the E-Commerce Microservices Platform. Routes requests to Product Service (5001), Order Service (5002), Customer Service (5003), and Inventory Service (5004)."
+        Description = "Central API Gateway for the E-Commerce Microservices Platform. Routes requests to Customer Service (5001), Order Service (5002), Product Service (5003), and Inventory Service (5004)."
     });
 });
 
@@ -32,9 +32,9 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
-    c.SwaggerEndpoint("/product-service/swagger/v1/swagger.json", "Product Service API v1");
-    c.SwaggerEndpoint("/order-service/swagger/v1/swagger.json", "Order Service API v1");
     c.SwaggerEndpoint("/customer-service/swagger/v1/swagger.json", "Customer Service API v1");
+    c.SwaggerEndpoint("/order-service/swagger/v1/swagger.json", "Order Service API v1");
+    c.SwaggerEndpoint("/product-service/swagger/v1/swagger.json", "Product Service API v1");
     c.SwaggerEndpoint("/inventory-service/swagger/v1/swagger.json", "Inventory Service API v1");
     c.RoutePrefix = "swagger";
 });
@@ -51,9 +51,9 @@ Console.WriteLine("  Gateway:  http://localhost:5000");
 Console.WriteLine("  Swagger:  http://localhost:5000/swagger");
 Console.WriteLine("===========================================");
 Console.WriteLine("  Downstream Microservices:");
-Console.WriteLine("  - Product Service:   http://localhost:5001");
+Console.WriteLine("  - Customer Service:  http://localhost:5001");
 Console.WriteLine("  - Order Service:     http://localhost:5002");
-Console.WriteLine("  - Customer Service:  http://localhost:5003");
+Console.WriteLine("  - Product Service:   http://localhost:5003");
 Console.WriteLine("  - Inventory Service: http://localhost:5004");
 Console.WriteLine("===========================================");
 

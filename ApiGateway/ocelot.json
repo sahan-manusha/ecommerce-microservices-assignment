@@ -1,7 +1,7 @@
 {
   "Routes": [
     {
-      "DownstreamPathTemplate": "/api/products",
+      "DownstreamPathTemplate": "/api/customers",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -9,11 +9,11 @@
           "Port": 5001
         }
       ],
-      "UpstreamPathTemplate": "/api/products",
+      "UpstreamPathTemplate": "/api/customers",
       "UpstreamHttpMethod": [ "GET", "POST" ]
     },
     {
-      "DownstreamPathTemplate": "/api/products/{id}",
+      "DownstreamPathTemplate": "/api/customers/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -21,7 +21,7 @@
           "Port": 5001
         }
       ],
-      "UpstreamPathTemplate": "/api/products/{id}",
+      "UpstreamPathTemplate": "/api/customers/{id}",
       "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
     },
     {
@@ -49,7 +49,7 @@
       "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
     },
     {
-      "DownstreamPathTemplate": "/api/customers",
+      "DownstreamPathTemplate": "/api/products",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -57,11 +57,11 @@
           "Port": 5003
         }
       ],
-      "UpstreamPathTemplate": "/api/customers",
+      "UpstreamPathTemplate": "/api/products",
       "UpstreamHttpMethod": [ "GET", "POST" ]
     },
     {
-      "DownstreamPathTemplate": "/api/customers/{id}",
+      "DownstreamPathTemplate": "/api/products/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -69,7 +69,7 @@
           "Port": 5003
         }
       ],
-      "UpstreamPathTemplate": "/api/customers/{id}",
+      "UpstreamPathTemplate": "/api/products/{id}",
       "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
     },
     {
@@ -105,7 +105,7 @@
           "Port": 5001
         }
       ],
-      "UpstreamPathTemplate": "/product-service/swagger/{everything}",
+      "UpstreamPathTemplate": "/customer-service/swagger/{everything}",
       "UpstreamHttpMethod": [ "GET" ]
     },
     {
@@ -129,7 +129,7 @@
           "Port": 5003
         }
       ],
-      "UpstreamPathTemplate": "/customer-service/swagger/{everything}",
+      "UpstreamPathTemplate": "/product-service/swagger/{everything}",
       "UpstreamHttpMethod": [ "GET" ]
     },
     {
